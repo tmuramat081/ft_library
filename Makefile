@@ -37,8 +37,10 @@ MEM_SRCS = ft_bzero.c \
 		ft_memcpy.c \
 		ft_memmove.c \
 		ft_memset.c \
+		ft_memswap.c \
 		ft_xmalloc.c \
-		ft_memcat.c
+		ft_memcat.c \
+		ft_qsort.c
 MTH_SRCS = ft_abs.c \
 		ft_vector_add.c \
 		ft_vector_cmp.c \
@@ -50,7 +52,8 @@ MTH_SRCS = ft_abs.c \
 		ft_binary_search.c \
 		ft_upper_bound.c \
 		ft_lower_bound.c \
-		ft_max.c
+		ft_max.c \
+		ft_swap.c
 CNV_SRCS = ft_atoi.c \
 		ft_itoa.c \
 		ft_tolower.c \

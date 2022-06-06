@@ -12,15 +12,24 @@
 
 #include "libft.h"
 
-void	ft_memswap(int *a, int *b, size_t size)
+void	ft_memswap(void *a, void *b, size_t size)
 {
-	void	*tmp;
-	
-	tmp = malloc(size);
-	if (!tmp)
+	unsigned char	*cast_a;
+	unsigned char	*cast_b;
+	unsigned char	*a_end;
+	unsigned char	tmp;
+
+	if (sizeof(a) != sizeof(b))
 		return ;
-	ft_memmove(tmp, a, size);
-	ft_memmove(a, b, size);
-	ft_memmove(b, tmp, size);
-	free(size);
+	cast_a = (unsigned char *)a;
+	cast_b = (unsigned char *)b;
+	a_end = a + size;
+	while (cast_a < a_end)
+	{
+		tmp = *cast_a;
+		*cast_a = *cast_b;
+		*cast_b = tmp;
+		cast_a++;
+		cast_b++;
+	}
 }

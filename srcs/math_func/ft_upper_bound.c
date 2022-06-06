@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_upper_bound(int arr[], int n, int x)
+int	ft_upper_bound(int *arr, int n, int x)
 {
 	int	mid;
 	int	lo;
