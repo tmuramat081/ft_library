@@ -19,20 +19,18 @@ void	ft_qsort(void *base, size_t n, size_t size,
 	size_t			hi;
 	size_t			pt;
 	unsigned char	*v;
-	unsigned char	*x;
 
+	if (n <= 1)
+		return ;
 	lo = 0;
 	hi = n - 1;
 	pt = (lo + hi) / 2;
-	if (n <= 1)
-		return ;
 	v = (unsigned char *)base;
 	while (true)
 	{
-		x = &v[pt * size];
-		while (cmp(&v[lo * size], x) < 0)
+		while (cmp(&v[lo * size], &v[pt * size]) < 0)
 			lo++;
-		while (cmp(&v[hi * size], x) > 0)
+		while (cmp(&v[hi * size], &v[pt * size]) > 0)
 			hi--;
 		if (lo >= hi)
 			break ;
@@ -40,8 +38,6 @@ void	ft_qsort(void *base, size_t n, size_t size,
 		lo++;
 		hi--;
 	}
-	if (0 < hi)
-		qsort(&v[0], hi + 1, size, cmp);
-	if (lo < n - 1)
-		qsort(&v[lo * size], n - lo, size, cmp);
+	qsort(&v[0], hi + 1, size, cmp);
+	qsort(&v[lo * size], n - lo, size, cmp);
 }
