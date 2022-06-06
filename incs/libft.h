@@ -6,7 +6,7 @@
 /*   By: tmuramat <mt15hydrangea@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 19:49:55 by tmuramat          #+#    #+#             */
-/*   Updated: 2022/04/12 18:43:32 by tmuramat         ###   ########.fr       */
+/*   Updated: 2022/06/04 21:59:35 by tmuramat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ void		*ft_calloc(size_t count, size_t size);
 size_t		ft_matrixlen(const char **src);
 char		**ft_matrixdup(const char **src);
 void		ft_free_matrix(char ***src);
+void		ft_memswap(void *a, void *b, size_t size);
+void		ft_xalloc(size_t size);
 
 /*** print functions ***/
 void		ft_putchar_fd(char c, int fd);
@@ -102,6 +104,7 @@ t_vector2	ft_vector_mul(t_vector2 v1, float t);
 bool		ft_vector_cmp(t_vector2 v1, t_vector2 v2);
 t_vector2	ft_vector_lerp(t_vector2 v1, t_vector2 v2, float t);
 int			ft_abs(int n);
+int			ft_max(int a, int b);
 int			ft_count_digits(long long int num, int radix);
 double		ft_diff_timespec(const t_timespec *t1, const t_timespec *t2);
 #endif
