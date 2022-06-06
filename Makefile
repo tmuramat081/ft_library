@@ -48,6 +48,8 @@ MTH_SRCS = ft_abs.c \
 		ft_diff_timespec.c \
 		ft_count_digits.c \
 		ft_binary_search.c \
+		ft_upper_bound.c \
+		ft_lower_bound.c \
 		ft_max.c
 CNV_SRCS = ft_atoi.c \
 		ft_itoa.c \
