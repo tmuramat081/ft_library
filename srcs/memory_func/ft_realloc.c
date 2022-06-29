@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcat.c                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmuramat <mt15hydrangea@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/04 11:52:33 by tmuramat          #+#    #+#             */
-/*   Updated: 2022/06/04 11:52:33 by tmuramat         ###   ########.fr       */
+/*   Created: 2022/06/12 14:26:57 by tmuramat          #+#    #+#             */
+/*   Updated: 2022/06/12 14:26:57 by tmuramat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcat(const void *buff1, const void *buff2, size_t s1, size_t s2)
+void	*ft_realloc(void *ptr, size_t size)
 {
-	unsigned char	*dst;
+	void	*new_ptr;
 
-	dst = (unsigned char *) malloc(s1 + s2);
-	if (!dst)
+	if (ptr == NULL)
+		return (malloc(size));
+	if (!size)
 		return (NULL);
-	ft_memmove(dst, buff1, s1);
-	ft_memmove(dst + s1, buff2, s2);
-	return (dst);
+	new_ptr = malloc(size);
+	if (!new_ptr)
+		return (NULL);
+	ft_memcpy (new_ptr, ptr, size);
+	free(ptr);
+	ptr = new_ptr;
+	return (ptr);
 }

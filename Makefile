@@ -53,6 +53,7 @@ MTH_SRCS = ft_abs.c \
 		ft_upper_bound.c \
 		ft_lower_bound.c \
 		ft_max.c \
+		ft_min.c \
 		ft_swap.c
 CNV_SRCS = ft_atoi.c \
 		ft_itoa.c \
@@ -114,7 +115,7 @@ ifndef SRC_TOT
 endif
 SRC_CNT := 0
 SRC_PCT = $(shell expr 100 \* $(SRC_CNT) / $(SRC_TOT))
-PROGRESS = $(eval SRC_CNT = $(shell expr ${SRC_CNT} + 1)) \
+PROGRESS = $(evalator SRC_CNT = $(shell expr ${SRC_CNT} + 1)) \
 	${PRINTF} "${DEL}${GREEN}[ %d/%d (%d%%) ] ${CC} ${CFLAGS} $< ...${DEFAULT}${CR}" $(SRC_CNT) $(SRC_TOT) $(SRC_PCT)
 
 # Command

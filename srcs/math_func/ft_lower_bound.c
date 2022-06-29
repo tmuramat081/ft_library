@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_lower_bound(int *arr, int n, int x)
+#include "libft.h"
+
+int	*ft_lower_bound(int *arr, int n, int x)
 {
 	int	mid;
 	int	lo;
@@ -26,7 +28,5 @@ int	ft_lower_bound(int *arr, int n, int x)
 		else
 			lo = mid + 1;
 	}
-	if (lo < n && arr[lo] < x)
-		lo++;
-	return (lo);
+	return (arr + lo);
 }

@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcat.c                                        :+:      :+:    :+:   */
+/*   ft_arraydup.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmuramat <mt15hydrangea@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/04 11:52:33 by tmuramat          #+#    #+#             */
-/*   Updated: 2022/06/04 11:52:33 by tmuramat         ###   ########.fr       */
+/*   Created: 2022/06/07 09:05:05 by tmuramat          #+#    #+#             */
+/*   Updated: 2022/06/07 09:05:05 by tmuramat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcat(const void *buff1, const void *buff2, size_t s1, size_t s2)
+int	*ft_arraydup(int const *src, size_t len)
 {
-	unsigned char	*dst;
+	int	*p;
 
-	dst = (unsigned char *) malloc(s1 + s2);
-	if (!dst)
-		return (NULL);
-	ft_memmove(dst, buff1, s1);
-	ft_memmove(dst + s1, buff2, s2);
-	return (dst);
+	p = (int *)malloc(len * sizeof(int));
+	ft_memmove(p, src, len * sizeof(int));
+	return (p);
 }
